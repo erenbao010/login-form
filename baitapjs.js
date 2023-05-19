@@ -27,17 +27,33 @@
 //   window.location.assign(`details.html?id=${id}`);
 // }
 
-function login_status(event) {
-  if (username.value == "" || password.value == "") {
-    alert("can dien thong tin");
-  } else {
+// async function login_status(event) {
+//   if (username.value == "" || password.value == "") {
+//     alert("can dien thong tin");
+//   } else {
+//     event.preventDefault();
+//     let userinfo = await get_user();
+//     if (userinfo.token)
+//     {
+//       window.location.assign(`web.html`);
+//     } else {
+//       alert('failed')
+//     }
+//   }
+// }
+async function login_status(event){
+  if(username.value == "" || password.value==""){
+    alert("wrong user name or password");
+  }
+  else {
     event.preventDefault();
-    let userinfo = get_user();
-    if (userinfo.length !== 0)
-    {
-      console.log(userinfo);
+    let userinfo = await get_user();
+    if(userinfo.token){
       window.location.assign(`web.html`);
+    } else{
+      alert ('failed')
     }
+
   }
 }
 
@@ -59,5 +75,7 @@ async function get_user() {
     });
   console.log(userinfo);
   console.log(userinfo.token);
+  localStorage.setItem('token',userinfo.token);
+  localStorage.setItem('username',userinfo.username);
   return userinfo;
 }
