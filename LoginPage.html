@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="content_left">
+          <form class="login_form">
+            <h2 class="login_form_span"> Log In </h2>
+            <div class="wrap_input" data-validate="Username is required">
+              <span class="label_input">Username</span></br>
+              <input
+              id="username"
+                class="user_name"
+                type="text"
+                name="username"
+                placeholder=" Username"
+                value="kminchelle"
+              />
+              <span class="focus-input100" data-symbol="&#xf206;"></span>
+            </div>
+            <div class="text-right">
+              <a class="reset_password" href="#"> Forgot password? </a>
+            </div>
+            <div
+              class="wrap-input_validate-input"
+              data-validate="Password is required"
+            >
+              <span class="label-input2">Password</span></br>
+              <input
+              id="password"
+                class="password1"
+                type="password2"
+                name="pass"
+                placeholder="..........."
+                value="0lelplR"
+              />
+            </div>
+            <div class="login2">
+                <div class="wrap-login"></div>
+                <button id="click_login" onclick="login_status(event)" type ="submit" class="wrap-login_btn">LOGIN IN </button>
+            </div>
+
+            <div class="text_login">
+              <span class="btn2"> Or Continue with </span>
+              <div class="icon">
+                <div class="wrap_icon"></div>
+                <a href="#" class="login-fb">
+                  <button class="btn">
+                    <i
+                      id="icon_media"
+                      class="fa fa-facebook"
+                      aria-hidden="true"
+                    ></i>
+                  </button>
+                </a>
+
+                <a href="#" class="login_github">
+                  <button class="btn">
+                    <i
+                      id="icon_media"
+                      class="fa fa-github"
+                      aria-hidden="true"
+                    ></i>
+                  </button>
+                </a>
+                <a href="#" class="login_gmail">
+                  <button class="btn">
+                    <i
+                      id="icon_media"
+                      class="fa fa-google"
+                      aria-hidden="true"
+                    ></i>
+                  </button>
+                </a>
+              </div>
+              <div class="sign_up_content">
+                <u> Don't have account yet ? </u>
+                <u class="sign_up">Sign up for free </u></u>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="content_right">
+          <div class="position">
+          <img 
+            class="img1" src="img\Character-working-laptop-sitting-chair.png" alt="Girl_table"
+          />
+          <img class="img2" src="img\Edit Profile Website (Community)\plants\cactus.png" alt="cactus"/>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script src="baitapjs.js"></script>
+  </body>
+</html>

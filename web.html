@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin:0px;
+            box-sizing: border-box;
+        }
+        html,body, .container{
+            height: 100%;
+            width:100%;
+        }
+        .menu{
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+           height: 100%;
+           width:5%;
+           align-items: center;
+        }
+        .top{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 60px;
+            align-items: center;
+            width:100%;
+        }
+        .top1{
+            width:100%;
+            height:50px;
+            position:relative;
+        }
+        .center{
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+        }
+        .center i {
+            padding-right: 20px;
+            cursor: pointer;
+        }
+        .center span {
+            cursor: pointer;
+        }
+        .bottom i {
+            cursor: pointer;
+        }
+        img{
+            width:50px;
+            height:50px;
+        }
+        .top2{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: start;
+        }
+        .menu .top2{
+            align-items: center;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            width:60%;
+            height:60%;
+            margin: 0 auto;
+            margin-top: 100px;
+            border : 2px solid black;
+        }
+
+        .form-container{
+            width: 95%;
+            display: flex;
+            flex-direction: row;
+        }
+        .menu{
+            background-color: orange;
+        }
+        .form-container .left{
+            border-right: 1px solid black;
+            width:20%;
+        }
+        .form-container .right{
+            width:80%;
+            padding: 30px 300px 60px 80px;
+        }
+        .header{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        table{
+            width:100%;
+            height:60%
+        }
+        td input{
+            width:90%;
+            height:40px;
+            border-radius: 5px;
+        }
+        select{
+            width:90%;
+            height:30px;
+            border-radius: 5px;
+        }
+        button{
+            height:30px;
+            width:30%;
+        }
+        button[type=submit]{
+            background-color: orange;
+            color:white;
+        }
+        button[type=reset]{
+            color:orange;
+            border:1px solid orange;
+            background-color: white;
+        }
+        tfoot tr td:first-child{
+            width:90%;
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+        td{
+            padding-bottom: 0px;
+        }
+        .body, form{
+            height:100%;
+        }
+        .content{
+            display:flex;
+            flex-direction: row;
+            justify-content: start;
+            gap:10px;
+            padding-left:60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="top">
+                <div class="top1">
+                    <div class="center">
+                
+                    </div>
+                </div>
+                <div class="top2">
+                    <i class="fa fa-house"></i>
+                    <i class="fa fa-bell"></i>
+                    <i class="fa fa-folder"></i>
+                    <i class="fa fa-arrow-trend-up"></i>
+                    <i class="fa fa-user"></i>
+                </div>
+            </div>
+            <div class="bottom">
+                <i id="show" onclick="showsetting()" class="fa fa-gear"></i>
+            </div>
+        </div>
+        <div class="form-container">
+            <div  class="left" value="displaysetting" >
+                <div id="display" class="top">
+                    <div class="top1">
+                        <div class="center">
+                            <i onclick="closesetting()" class="fa fa-arrow-left"></i>
+                            <span>Settings</span>
+                        </div>
+                    </div>
+                    <div class="top2">
+                        <div onclick="change_style(id)" id="icon" class="content">
+                            <i class="fa fa-pen-to-square"></i>
+                            <span>Edit profile</span>
+                        </div>
+                        <div onclick="change_style(id)" id="icon2" class="content">
+                            <i class="fa fa-bell"></i>
+                            <span>Notification</span>
+                        </div>
+                        
+                        <div onclick="change_style(id)" id="icon3" class="content">
+                            <i class="fa fa-lock"></i>
+                            <span>Security</span>
+                        </div>
+                        
+
+                        <div class="content">
+                            <i class="fa fa-gear"></i>
+                            <span>Appearance</span>
+                        </div>
+                       
+
+                        <div class="content">
+                            <i class="fa fa-circle-question"></i>
+                            <span>Help</span>
+                        </div>
+                        
+                    </div>
+                </div> 
+            </div>
+            <div class="right">
+               <div class="header">
+                    <h2>Edit profile</h2>
+    
+               </div>
+               <div class="body">
+                    <form id="myform" action = "#">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label for="fname">First Name</label><br>
+                                        <input type="text" placeholder="Vinh">
+                                    </td>
+                                    <td>
+                                        <label for="lname">Last Name</label><br>
+                                        <input type="text" placeholder="Duong">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="email">Email</label><br>
+                                        <input type="email" placeholder="email@gmail.com">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="address">Address</label><br>
+                                        <input type="text" placeholder="135 hai ba trung">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="contact">Contact Number</label><br>
+                                        <input type="text" placeholder="01234567">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="city">City</label><br>
+                                        <select name="city">
+                                            <option value="vietnam">Vietnam</option>
+                                            <option value="india">India</option>
+                                            <option value="china">China</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                           <tfoot>
+                            <tr>
+                                <td>
+                    
+                                    
+                                </td>
+                                <td></td>
+                            </tr>
+                           </tfoot>
+                        </table>
+                        <button type="submit">Save</button>
+                        <input type="button" onclick="deleteAllForm()" value="Reset form">
+                    </form>
+               </div>
+            </div>    
+        </div>
+            
+        </div>
+    </div>
+    
+</body>
+<script
+    src="baitapjs.js"></script>
+
+</html>
